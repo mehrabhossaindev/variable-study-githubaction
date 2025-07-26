@@ -1,0 +1,19 @@
+name: Step output command
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run step 1
+        run: echo "Run Step One"
+
+      - name: Run Step 2
+        run: echo "Run Step Two"
+
+      - name: Run Step 3
+        run: echo "Run Step Three"
+        
+    
