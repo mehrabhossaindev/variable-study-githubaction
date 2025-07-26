@@ -8,12 +8,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run step 1
-        run: echo "Run Step One"
+        id: step_1
+        run: |
+          echo "Run Step One"
+          echo "Name=Mehrab" >> $GITHUB_OUTPUT
 
       - name: Run Step 2
-        run: echo "Run Step Two"
+        id: step_2
+        run: |
+          echo "Run Step Two"
+          echo "Age=30" >> $GITHUB_OUTPUT
 
       - name: Run Step 3
-        run: echo "Run Step Three"
+        run: |
+          echo "Run Step Three"
+          echo "Your Name is - ${{steps.step_1.outputs.Name}}
+          echo "Your Age is - ${{steps.step_2.outputs.Age}}
         
     
